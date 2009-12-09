@@ -185,6 +185,7 @@ public class Status extends PreferenceActivity {
         
         //NOTE "imei" is the "Device ID" since it represents the IMEI in GSM and the MEID in CDMA
         if (mPhone.getPhoneName().equals("CDMA")) {
+            setSummaryText("esn_number", mPhone.getEsn());
             setSummaryText("meid_number", mPhone.getMeid());
             setSummaryText("min_number", mPhone.getCdmaMin());
             setSummaryText("prl_version", mPhone.getCdmaPrlVersion());
@@ -209,6 +210,10 @@ public class Status extends PreferenceActivity {
             // device is not CDMA, do not display CDMA features
             // check Null in case no specified preference in overlay xml
             removablePref = findPreference("prl_version");
+            if (removablePref != null) {
+                getPreferenceScreen().removePreference(removablePref);
+            }
+            removablePref = findPreference("esn_number");
             if (removablePref != null) {
                 getPreferenceScreen().removePreference(removablePref);
             }
