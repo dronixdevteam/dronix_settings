@@ -41,6 +41,8 @@ import android.widget.TimePicker;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
+import android.util.Log;
+import android.telephony.TelephonyManager;
 
 public class DateTimeSettings 
         extends PreferenceActivity 
@@ -50,6 +52,7 @@ public class DateTimeSettings
     private static final String HOURS_12 = "12";
     private static final String HOURS_24 = "24";
     
+    private static final String TAG = "DateTimeSettings";
     private Calendar mDummyDate;
     private static final String KEY_DATE_FORMAT = "date_format";
     private static final String KEY_AUTO_TIME = "auto_time";
@@ -124,6 +127,12 @@ public class DateTimeSettings
         
         getPreferenceScreen().getSharedPreferences().registerOnSharedPreferenceChangeListener(this);
 
+        int activePhoneType = TelephonyManager.getDefault().getPhoneType();
+        // If phone type is CDMA disable the manual time mode & force
+        // auto time mode
+        if (TelephonyManager.PHONE_TYPE_CDMA == activePhoneType) {
+            setAutoState(false, true);
+        }
         ((CheckBoxPreference)mTime24Pref).setChecked(is24Hour());
 
         // Register for time ticks and other reasons for time change
@@ -193,12 +202,7 @@ public class DateTimeSettings
             updateTimeAndDateDisplay();
         } else if (key.equals(KEY_AUTO_TIME)) {
             boolean autoEnabled = preferences.getBoolean(key, true);
-            Settings.System.putInt(getContentResolver(), 
-                    Settings.System.AUTO_TIME, 
-                    autoEnabled ? 1 : 0);
-            mTimePref.setEnabled(!autoEnabled);
-            mDatePref.setEnabled(!autoEnabled);
-            mTimeZone.setEnabled(!autoEnabled);
+            setAutoState(true, autoEnabled);
         }
     }
 
@@ -287,7 +291,25 @@ public class DateTimeSettings
             Intent data) {
         updateTimeAndDateDisplay();
     }
-    
+
+   /* sets the auto_time preference to true if isEnabled flag is set true otherwise
+    * sets the auto_time preference based on the user selection(autotimeStatus)
+    * passed as argument.
+    */
+    private void setAutoState(boolean isEnabled, boolean autotimeStatus) {
+        if (isEnabled == false) {
+            mAutoPref.setChecked(autotimeStatus);
+            mAutoPref.setEnabled(isEnabled);
+        }
+        else {
+            Settings.System.putInt(getContentResolver(),
+               Settings.System.AUTO_TIME, autotimeStatus ? 1 : 0);
+        }
+        mTimePref.setEnabled(!autotimeStatus);
+        mDatePref.setEnabled(!autotimeStatus);
+        mTimeZone.setEnabled(!autotimeStatus);
+    }
+
     private void timeUpdated() {
         Intent timeChanged = new Intent(Intent.ACTION_TIME_CHANGED);
         sendBroadcast(timeChanged);
