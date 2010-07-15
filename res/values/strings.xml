@@ -1139,47 +1139,57 @@
     <!-- Sound & display settings screen, setting option name to change whether the screen adjusts automatically based on lighting conditions -->
     <string name="automatic_brightness">Automatic brightness</string>
 
-    <!-- SIM lock settings title -->
-    <string name="sim_lock_settings">SIM card lock settings</string>
+    <!-- ICC lock settings title -->
+    <string name="icc_lock_settings">SIM/RUIM card lock settings</string>
     <!-- Security & location settings screen, setting option name -->
-    <string name="sim_lock_settings_category">Set up SIM card lock</string>
-    <!-- Security & location settings screen, section heading for settings related to sim card locking -->
-    <string name="sim_lock_settings_title">SIM card lock</string>
-    <!-- SIM card lock settings screen, setting check box label -->
-    <string name="sim_pin_toggle">Lock SIM card</string>
-    <!-- SIM card lock settings screen, setting option summary text when SIM lock check box is selected -->
-    <string name="sim_lock_on">Require PIN to use phone</string>
-    <!-- SIM card lock settings screen, setting option summary text when SIM lock check box is clear -->
-    <string name="sim_lock_off">Require PIN to use phone</string>
-    <!-- SIM card lock settings screen, setting option name to change the SIM PIN -->
-    <string name="sim_pin_change">Change SIM PIN</string>
-    <!-- SIM card lock settings screen, SIM PIN dialog message instruction -->
-    <string name="sim_enter_pin">SIM PIN</string>
-    <!-- SIM card lock settings screen, SIM PIN dialog message instruction -->
-    <string name="sim_enable_sim_lock">Lock SIM card</string>
-    <!-- SIM card lock settings screen, SIM PIN dialog message instruction -->
-    <string name="sim_disable_sim_lock">Unlock SIM card</string>
-    <!-- SIM card lock settings screen, SIM PIN dialog message instruction -->
-    <string name="sim_enter_old">Old SIM PIN</string>
-    <!-- SIM card lock settings screen, SIM PIN dialog message instruction -->
-    <string name="sim_enter_new">New SIM PIN</string>
-    <string name="sim_reenter_new">Re-type new PIN</string>
-    <!-- SIM card lock settings screen, SIM PIN dialog message instruction -->
-    <string name="sim_change_pin">SIM PIN</string>
-    <!-- SIM card lock settings screen, SIM PIN dialog message when wrong PIN is entered -->
-    <string name="sim_bad_pin">Incorrect PIN!</string>
-    <!-- SIM card lock settings screen, SIM PIN dialog message when PINs don't match -->
-    <string name="sim_pins_dont_match">PINs don\'t match!</string>
-    <!-- SIM card lock settings screen, toast after not entering correct SIM PIN -->
-    <string name="sim_change_failed">Unable to change PIN.\nPossibly incorrect PIN.</string>
-    <!-- SIM card lock settings screen, SIM PIN dialog message when the entered PIN is correct-->
-    <string name="sim_change_succeeded">SIM PIN changed successfully</string>
-    <!-- SIM card lock settings screen, toast after not entering correct SIM PIN -->
-    <string name="sim_lock_failed">Unable to change SIM card lock state.\nPossibly incorrect PIN.</string>
-    <!-- SIM card lock settings screen, SIM PIN dialog button labels: -->
-    <string name="sim_enter_ok">OK</string>
-    <!-- SIM card lock settings screen, SIM PIN dialog button labels: -->
-    <string name="sim_enter_cancel">Cancel</string>
+    <string name="icc_lock_settings_category">Set up SIM/RUIM card lock</string>
+    <!-- Security & location settings screen, section heading for settings related to ICC card locking -->
+    <string name="icc_lock_settings_title">SIM/RUIM card lock</string>
+    <!-- ICC card lock settings screen, setting check box label -->
+    <string name="icc_pin_toggle">Lock SIM/RUIM card</string>
+    <!-- ICC card lock settings screen, setting option summary text when ICC lock check box is selected -->
+    <string name="icc_lock_on">Require PIN to use phone</string>
+    <!-- ICC card lock settings screen, setting option summary text when ICC lock check box is clear -->
+    <string name="icc_lock_off">Do not require PIN to use phone</string>
+    <!-- ICC card lock settings screen, setting option name to change the ICC PIN -->
+    <string name="icc_pin_change">Change SIM/RUIM PIN</string>
+    <!-- ICC card lock settings screen, ICC PIN dialog message instruction -->
+    <string name="icc_enter_pin">SIM/RUIM PIN</string>
+    <!-- ICC card lock settings screen, ICC PIN dialog message instruction -->
+    <string name="icc_enable_icc_lock">Lock SIM/RUIM card</string>
+    <!-- ICC card lock settings screen, ICC PIN dialog message instruction -->
+    <string name="icc_disable_icc_lock">Unlock SIM/RUIM card</string>
+    <!-- ICC card lock settings screen, ICC PIN dialog message instruction -->
+    <string name="icc_enter_old">Old SIM/RUIM PIN</string>
+    <!-- ICC card lock settings screen, ICC PIN dialog message instruction -->
+    <string name="icc_enter_new">New SIM/RUIM PIN</string>
+    <string name="icc_reenter_new">Re-type new PIN</string>
+    <!-- ICC card lock settings screen, ICC PIN dialog message instruction -->
+    <string name="icc_change_pin">SIM/RUIM PIN</string>
+    <!-- ICC card lock settings screen, ICC PIN dialog message when wrong PIN is entered -->
+    <string name="icc_bad_pin">Incorrect PIN!</string>
+    <!-- ICC card lock settings screen, ICC PIN dialog message when PINs don't match -->
+    <string name="icc_pins_dont_match">PINs don\'t match!</string>
+    <!-- ICC card lock settings screen, toast after not entering correct ICC PIN -->
+    <string name="icc_change_failed">Unable to change PIN.\nPossibly incorrect PIN.</string>
+    <!-- ICC card lock settings screen, ICC PIN dialog message when the entered PIN is correct-->
+    <string name="icc_change_succeeded">SIM/RUIM PIN changed successfully</string>
+    <!-- ICC card lock settings screen, toast after not entering correct ICC PIN -->
+    <string name="icc_lock_failed">Unable to change SIM/RUIM card lock state.\nPossibly incorrect PIN.</string>
+    <!-- ICC card lock settings screen, ICC PIN dialog button labels: -->
+    <string name="icc_enter_ok">OK</string>
+    <!-- ICC card lock settings screen, ICC PIN dialog button labels: -->
+    <string name="icc_enter_cancel">Cancel</string>
+    <!-- ICC password can't be changed as ICC LOCK is not enabled: -->
+    <string name="icc_change_failed_enable_icc_lock">Unable to Change SIM/RUIM PIN.\n Enable SIM/RUIM LOCK.</string>
+    <!-- ICC lock can't be changed - not supported -->
+    <string name="icc_lock_change_not_supported">Unable to Change SIM/RUIM Lock.\n SIM/RUIM doesn\'t support it.</string>
+    <!-- ICC card lock settings screen, toast displayed on wrong PIN1: -->
+    <string name="icc_pin_attempts">\nAttempts Remaining :</string>
+    <!-- ICC card lock settings screen, toast displayed on PIN1 enable: -->
+    <string name="icc_pin_enabled">PIN1 Enabled!</string>
+    <!-- ICC card lock settings screen, toast displayed on PIN1 disable: -->
+    <string name="icc_pin_disabled">PIN1 Disabled!</string>
 
     <!-- Advanced (used for diagnostics) device info activity title -->
     <string name="device_info_settings">Phone status</string>
