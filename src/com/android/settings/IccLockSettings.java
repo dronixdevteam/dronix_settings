@@ -313,9 +313,7 @@ public class IccLockSettings extends PreferenceActivity
                          Toast.LENGTH_SHORT)
                          .show();
             } else {
-               Toast.makeText(this, mRes.getString(R.string.icc_change_failed),
-                         Toast.LENGTH_SHORT)
-                         .show();
+               displayRetryCounter(mRes.getString(R.string.icc_change_failed));
             }
 
         } else {
