@@ -20,6 +20,15 @@
     android:title="@string/settings_label"
     android:key="parent">
 
+    <com.android.settings.IconPreferenceScreen
+        android:title="@string/dronix_controls_title"
+        settings:icon="@drawable/ic_settings_wireless">
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetPackage="com.android.settings"
+            android:targetClass="com.android.settings.DroniXExtendedMenuActivity" />
+    </com.android.settings.IconPreferenceScreen>
+
         <com.android.settings.IconPreferenceScreen
             android:title="@string/radio_controls_title"
             settings:icon="@drawable/ic_settings_wireless">

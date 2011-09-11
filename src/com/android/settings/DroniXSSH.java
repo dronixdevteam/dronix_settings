@@ -3,6 +3,8 @@ package com.android.settings;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import com.stericson.RootTools.RootTools;
+import com.stericson.RootTools.RootToolsException;
 
 import java.io.*;
 
@@ -53,19 +55,25 @@ class DroniXSSH {
 			passFile.close();
 
 			// restore permission on /etc/ssh/passwd and remount /system ro
-			fsm.setSSHpasswordFileRO();
-			fsm.mountRO();
+            try {
+                fsm.setSSHpasswordFileRO();
+            } catch (RootToolsException e) {
+                e.printStackTrace();
+            }
+            try {
+                fsm.mountRO();
+            } catch (RootToolsException e) {
+                e.printStackTrace();
+            }
 
-		} catch (IOException e) {
+        } catch (IOException e) {
 			e.printStackTrace();
 		} catch (InterruptedException e) {
-			e.printStackTrace();
-		} catch (RootToolsException e) {
 			e.printStackTrace();
 		}
 
 
-		return true;
+        return true;
 	}
 
         public void showInfos(String body, String title) {

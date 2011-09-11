@@ -1,5 +1,8 @@
 package com.android.settings;
 
+import com.stericson.RootTools.RootTools;
+import com.stericson.RootTools.RootToolsException;
+
 import java.io.IOException;
 import java.util.List;
 
