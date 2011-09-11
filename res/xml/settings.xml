@@ -22,7 +22,7 @@
 
     <com.android.settings.IconPreferenceScreen
         android:title="@string/dronix_controls_title"
-        settings:icon="@drawable/ic_settings_wireless">
+        settings:icon="@drawable/ic_settings_dronix">
         <intent
             android:action="android.intent.action.MAIN"
             android:targetPackage="com.android.settings"
