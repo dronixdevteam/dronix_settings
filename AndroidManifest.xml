@@ -66,14 +66,6 @@
             </intent-filter>
         </activity>
 
-        <!-- DRONIX CONTROLS -->
-        <activity android:name="DroniXExtendedMenuActivity"
-                  android:label="@string/dronix_controls_title">
-        </activity>
-         <activity android:name="DroniXSSHpasswordChange"
-                  android:label="@string/ssh_password_change_menuitem">
-        </activity>
-
         <!-- Wireless Controls -->
 
         <activity android:name="WirelessSettings"
